@@ -187,7 +187,7 @@ const SIGNALS = [
   { id:"strong-buy",  label:"STRONG", type:"BUY",  color:"#00FF9C", glow:"rgba(0,255,156,0.25)", dim:"rgba(0,255,156,0.07)",  bars:3, min:78, max:100 },
 ];
 const ALL_TF = ["1m","5m","15m","30m","1H","4H","1D","1W","1M"];
-const SERVER  = "http://localhost:5000";
+const SERVER  = process.env.REACT_APP_API_URL || " ";
 const AUTO_INTERVAL = 15;
 
 function scoreToSignal(s){ return SIGNALS.find(x=>s>=x.min&&s<x.max)||SIGNALS[3]; }
